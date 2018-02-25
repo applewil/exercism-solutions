@@ -4,7 +4,7 @@
 class Anagram {
 private:
     static const size_t CHAR_SET_LENGTH = CHAR_MAX - CHAR_MIN + 1;
-    static const char TO_LOWERCASE_BIT_PATTERN = 0x20;
+    static const char TO_LOWERCASE_BIT_PATTERN = 0b00100000;
     std::string subject;
     std::vector<std::string> _matches;
     static bool match(std::string a, std::string b) {
