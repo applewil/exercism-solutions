@@ -1,6 +1,5 @@
 // clang-format off
 #include <climits>
-#include <stdexcept>
 #include <string>
 #include <vector>
 #include "Anagram.hpp"

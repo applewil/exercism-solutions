@@ -32,7 +32,7 @@ private:
 
 public:
     Anagram(std::string subject) : subject(subject) {}
-    std::vector<std::string>& matches(std::vector<std::string> candidates) {
+    const std::vector<std::string>& matches(std::vector<std::string> candidates) {
         std::vector<std::string>::iterator it;
 
         for (it = candidates.begin(); it != candidates.end(); it++) {
