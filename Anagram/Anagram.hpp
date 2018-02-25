@@ -8,24 +8,24 @@ private:
     std::string subject;
     std::vector<std::string> _matches;
     static bool match(std::string a, std::string b) {
-        int a_counts[CHAR_SET_LENGTH] = {0};
-        int b_counts[CHAR_SET_LENGTH] = {0};
+        int a_map[CHAR_SET_LENGTH]{0};
+        int b_map[CHAR_SET_LENGTH]{0};
         char a_char;
         char b_char;
-        bool equal = true;
+        bool equal(true);
         size_t i;
 
         if (a.length() != b.length()) return false;
         for (i = 0; i < a.length(); i++) {
             a_char = a[i] | TO_LOWERCASE_BIT_PATTERN;
             b_char = b[i] | TO_LOWERCASE_BIT_PATTERN;
-            a_counts[(int) a_char]++;
-            b_counts[(int) b_char]++;
+            a_map[(int) a_char]++;
+            b_map[(int) b_char]++;
             if (a_char != b_char) equal = false;
         }
         if (equal) return false;
         for (i = 0; i < CHAR_SET_LENGTH; i++) {
-            if (a_counts[i] != b_counts[i]) return false;
+            if (a_map[i] != b_map[i]) return false;
         }
         return true;
     }
@@ -35,7 +35,7 @@ public:
     std::vector<std::string>& matches(std::vector<std::string> candidates) {
         std::vector<std::string>::iterator it;
 
-        for (it = candidates.begin(); it != candidates.end(); ++it) {
+        for (it = candidates.begin(); it != candidates.end(); it++) {
             if (match(subject, *it)) _matches.push_back(*it);
         }
         return _matches;
