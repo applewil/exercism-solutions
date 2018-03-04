@@ -1,2 +1,2 @@
-# exercism-solutions
-http://exercism.io practice problem solutions
+# exercism-solutions-cpp
+http://exercism.io/languages/cpp practice problem solutions
